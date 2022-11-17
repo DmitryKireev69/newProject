@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import {Route, Routes} from "react-router-dom";
+import {ProductsPage} from "./pages/ProductsPage";
+import {AboutPage} from "./pages/AboutPage";
+import {Navigation} from "./components/Navigation";
 
 function App() {
-
-const [count, setCount] = useState(0);
-
-  return (
-      <div>
-        <h1>Hello DIMAN</h1>
-        <button className="border 2px solid" onClick={ () => setCount(count + 1)}>Click Me!</button>
-        <h1>{count}</h1>
-      </div>
-
-  );
+    return(
+        <>
+            <Navigation/>
+            <Routes>
+                <Route path="/" element={<ProductsPage/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
+            </Routes>
+        </>
+    )
 }
 
 export default App;
